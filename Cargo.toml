@@ -1,0 +1,10 @@
+[package]
+name = "x86rs"
+version = "0.1.0"
+authors = ["qeeg <mszoopers@protonmail.com>"]
+license = "BSD-3-Clause"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
