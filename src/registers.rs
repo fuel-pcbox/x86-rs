@@ -110,6 +110,23 @@ enum Reg8 {
     BH,
 }
 
+impl From<usize> for Reg8 {
+    fn from(val: usize) -> Reg8 {
+        use Reg8::*;
+        match val & 7 {
+            0 => AL,
+            1 => CL,
+            2 => DL,
+            3 => BL,
+            4 => AH,
+            5 => CH,
+            6 => DH,
+            7 => BH,
+            _ => panic!(),
+        }
+    }
+}
+
 enum Reg16 {
     AX,
     CX,
@@ -121,6 +138,23 @@ enum Reg16 {
     DI,
 }
 
+impl From<usize> for Reg16 {
+    fn from(val: usize) -> Reg16 {
+        use Reg16::*;
+        match val & 7 {
+            0 => AX,
+            1 => CX,
+            2 => DX,
+            3 => BX,
+            4 => SP,
+            5 => BP,
+            6 => SI,
+            7 => DI,
+            _ => panic!(),
+        }
+    }
+}
+
 enum Reg32 {
     EAX,
     ECX,
@@ -130,6 +164,23 @@ enum Reg32 {
     EBP,
     ESI,
     EDI,
+}
+
+impl From<usize> for Reg32 {
+    fn from(val: usize) -> Reg32 {
+        use Reg32::*;
+        match val & 7 {
+            0 => EAX,
+            1 => ECX,
+            2 => EDX,
+            3 => EBX,
+            4 => ESP,
+            5 => EBP,
+            6 => ESI,
+            7 => EDI,
+            _ => panic!(),
+        }
+    }
 }
 
 enum SegReg {
